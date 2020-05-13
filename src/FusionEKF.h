@@ -44,6 +44,19 @@ class FusionEKF {
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
   Eigen::MatrixXd Hj_;
+
+  float noise_ax;
+  float noise_ay;
+
+  float rho;      // range: radial distance from origin
+  float phi;      // bearing: angle between rho and x axis
+  float rho_dot;  // radial velocity: change of rho
+
+  // delta time between previous and current time
+  float dt;
+  float dt_2;
+  float dt_3;
+  float dt_4;
 };
 
 #endif // FusionEKF_H_
